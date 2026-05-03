@@ -1,0 +1,42 @@
+/* ריסוס הגדרות ברירת מחדל שמפריעות */
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  /* הסרנו כאן את ה-background-color הלבן הכפוי */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@keyframes laserMove {
+  0% { transform: translateX(-100%); }
+  50% { transform: translateX(250%); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes textPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.laser-scanner-line {
+  position: absolute;
+  top: 0; left: 0; width: 40%; height: 100%;
+  background: linear-gradient(90deg, transparent, #ff0000, transparent);
+  box-shadow: 0 0 15px #ff0000;
+  animation: laserMove 4s infinite linear;
+}
+
+.ai-thought-active {
+  animation: textPulse 2s infinite ease-in-out;
+}
